@@ -23,6 +23,7 @@ Demo backend s Django REST Framework pro autory a jejich weby.
    ```
 
 3. **Spusť testy (volitelné):**
+   ![PyTest](https://github.com/jiri-one/skoumal_task/workflows/PyTest/badge.svg)
    
    Pro spuštění testů je nutné nainstalovat pytest
    ```bash
