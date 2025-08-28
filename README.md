@@ -38,10 +38,38 @@ Demo backend s Django REST Framework pro autory a jejich weby.
    python manage.py runserver
    ```
 
-5. **Vyzkoušej API:**
-   - POST `/author` (JSON): `{ "name": "Tom", "age": 30, "email": "tom@x.cz", "phonenumber": "+420123456789" }`
-   - POST `/website` (JSON): `{ "name": "TomSite", "url": "https://tom.cz", "author": 1 }`
-   - GET `/author`
+5. **Vyzkoušej API, příklad použití (curl):**
+
+### Vytvoření autora
+
+```bash
+curl -X POST http://127.0.0.1:8000/author \
+  -H "Content-Type: application/json" \
+  -d '{
+        "name": "Tom",
+        "age": 30,
+        "email": "tom@x.cz",
+        "phonenumber": "+420123456789"
+      }'
+```
+
+### Vytvoření webu pro autora (např. pro autora s ID 1)
+
+```bash
+curl -X POST http://127.0.0.1:8000/website \
+  -H "Content-Type: application/json" \
+  -d '{
+        "name": "TomSite",
+        "url": "https://tom.cz",
+        "author": 1
+      }'
+```
+
+### Získání seznamu autorů s weby
+
+```bash
+curl http://127.0.0.1:8000/author
+```
 
 ## Poznámky
 
